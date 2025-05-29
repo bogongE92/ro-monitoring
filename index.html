@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공정모니터링</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div class="wrapper process-monitoring">
+        <div class="container">
+            <!-- 텍스트 박스 -->
+            <div class="title-area">
+                <p class="title"></p>
+            </div>
+            <div class="date-area">
+                <div class="date-box">2025-05-24 14:25:40</div>
+            </div>
+            <!-- 유랑조 -->
+            <div class="water-tank tank-1">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height red-75">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">유량조</span>
+                </div>
+                <div class="measurement-textbox waterlevel">
+                    <label for="flow-input">수위</label>
+                    <div class="input-container">
+                        <input id="flow-input" type="text" placeholder="00" />
+                        <span class="unit percent">%</span>
+                    </div>
+                </div>
+                <div class="flowmeter-area">
+                    <div class="measurement-textbox flowmeter-1">
+                        <label for="flow-input">유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00" />
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+                    </div>
+                    <div class="measurement-textbox flowmeter-2">
+                        <label for="flow-input">적산유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00000000" />
+                            <span class="unit">t</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 전탈질조 -->
+            <div class="water-tank tank-2">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height red-50">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">전탈질조</span>
+                </div>
+            </div>
+            <!-- 폭기조 -->
+            <div class="water-tank tank-3">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height red-25">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">폭기조</span>
+                </div>
+            </div>
+            <!-- 구)폭기조 -->
+            <div class="water-tank tank-4">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height red-75">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">구)폭기조</span>
+                </div>
+                <div class="flowmeter-area">
+                    <div class="measurement-textbox flowmeter-1">
+                        <label for="flow-input">유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00" />
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+                    </div>
+                    <div class="measurement-textbox flowmeter-2">
+                        <label for="flow-input">적산유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00000000" />
+                            <span class="unit">t</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 농축조 -->
+            <div class="water-tank tank-5">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height red-25">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">농축조</span>
+                </div>
+        
+            </div>
+            <!-- 구)막분리조 -->
+            <div class="water-tank tank-6">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height red-50">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">구)막분리조</span>
+                </div>
+                <div class="flowmeter-area">
+                    <div class="measurement-textbox flowmeter-1">
+                        <label for="flow-input">유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00" />
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+                    </div>
+                    <div class="measurement-textbox flowmeter-2">
+                        <label for="flow-input">적산유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00000000" />
+                            <span class="unit">t</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 막분리조 -->
+            <div class="water-tank tank-7">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height red-100">
+                        <img src="image/tank2.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">막분리조</span>
+                </div>
+                <div class="measurement-textbox waterlevel">
+                    <label for="flow-input">수위</label>
+                    <div class="input-container">
+                        <input id="flow-input" type="text" placeholder="00" />
+                        <span class="unit percent">%</span>
+                    </div>
+                </div>
+                <div class="flowmeter-area flow-1">
+                    <div class="measurement-textbox flowmeter-1">
+                        <label for="flow-input">유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00" />
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+                    </div>
+                    <div class="measurement-textbox flowmeter-2">
+                        <label for="flow-input">적산유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00000000" />
+                            <span class="unit">t</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flowmeter-area flow-2">
+                    <div class="measurement-textbox flowmeter-1">
+                        <label for="flow-input">유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00" />
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+                    </div>
+                    <div class="measurement-textbox flowmeter-2">
+                        <label for="flow-input">적산유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00000000" />
+                            <span class="unit">t</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 막처리수조 -->
+            <div class="water-tank tank-8">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height red-75">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">막처리수조</span>
+                </div>
+                <div class="measurement-textbox waterlevel">
+                    <label for="flow-input">수위</label>
+                    <div class="input-container">
+                        <input id="flow-input" type="text" placeholder="00" />
+                        <span class="unit percent">%</span>
+                    </div>
+                </div>
+                <div class="flowmeter-area">
+                    <div class="measurement-textbox flowmeter-1">
+                        <label for="flow-input">유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00" />
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+                    </div>
+                    <div class="measurement-textbox flowmeter-2">
+                        <label for="flow-input">적산유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00000000" />
+                            <span class="unit">t</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 스컴저장조 -->
+            <div class="water-tank tank-9">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height black-75">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">스컴저장조</span>
+                </div>
+                <div class="measurement-textbox waterlevel">
+                    <label for="flow-input">수위</label>
+                    <div class="input-container">
+                        <input id="flow-input" type="text" placeholder="00" />
+                        <span class="unit percent">%</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 반송조 -->
+            <div class="water-tank tank-10">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height black-50">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">반송조</span>
+                </div>
+            </div>
+            <!-- RO 처리수조 -->
+            <div class="water-tank tank-11">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height blue-50">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">RO 처리수조</span>
+                </div>
+                <div class="flowmeter-area">
+                    <div class="measurement-textbox flowmeter-1">
+                        <label for="flow-input">유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00" />
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+                    </div>
+                    <div class="measurement-textbox flowmeter-2">
+                        <label for="flow-input">적산유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00000000" />
+                            <span class="unit">t</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 액비저장소 -->
+            <div class="water-tank tank-12">
+                <div class="water-tank-box">
+                    <div class="water-tank-img water-height red-75">
+                        <img src="image/tank1.svg" alt="물탱크이미지" />
+                    </div>
+                    <span class="water-tank-text">액비저장소</span>
+                </div>
+                <div class="flowmeter-area">
+                    <div class="measurement-textbox flowmeter-1">
+                        <label for="flow-input">유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00" />
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+                    </div>
+                    <div class="measurement-textbox flowmeter-2">
+                        <label for="flow-input">적산유량</label>
+                        <div class="input-container">
+                            <input id="flow-input" type="text" placeholder="00000000" />
+                            <span class="unit">t</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

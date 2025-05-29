@@ -1,0 +1,1033 @@
+/* 기본 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+    overflow-x: hidden;
+}
+.wrapper{
+    width:100%; 
+    max-width:100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.wrapper.process-monitoring{background: #f8f8f8;}
+.wrapper.ro-monitoring{background: #fff;}
+.container {
+    background-color: #fff;
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto !important;
+    background-repeat: no-repeat;
+}
+.process-monitoring .container{
+    background-image: url('image/background_process_monitoring.svg');
+    background-position: 0px 0px;
+}
+.ro-monitoring .container{
+    background-image: url('image/background_ro_monitoring_new.svg');
+    background-position: 0px 0px;
+}
+
+.posLeft{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.posTop{
+    top: 50%;
+    transform: translateY(-50%);
+}
+.measurement-textbox{
+    /* width: 120px; */
+    position: absolute;
+    background-color: #3F3F5A; /* 카드 배경색 */
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+.measurement-textbox label {
+    font-size: 9.75px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    display: block;
+    background-color: #52536D;
+}
+.measurement-textbox .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 13.5px;
+    padding: 2px 7.5px;
+    gap: 5px;
+    background-color: #27274C;
+    line-height: 1;
+}
+.measurement-textbox .input-container input {
+    width: 100%;
+    height: 36px;
+    font-size: 27px;
+    text-align: right;
+    border: none;
+    border-radius: 4px;
+    background: initial;
+    color: #FFFF35;
+    letter-spacing: -0.5px;
+    font-weight: 900;
+    font-family: "Noto Sans", sans-serif;
+    /* -webkit-text-stroke: 1px #BD0600; */
+    -webkit-text-stroke: 1.5px #000;
+}
+.measurement-textbox .input-container input:focus {
+    outline: none;
+}
+.measurement-textbox .input-container input::placeholder {
+   /*  color: #eee; */
+    color: #FFFF35;
+}
+.measurement-textbox .unit {
+    font-size: 12.24px;
+    font-weight: 500;
+    font-family: "Noto Sans", sans-serif;
+    color: #E3E3E3;
+}
+.measurement-textbox .unit.percent{
+    font-size: 10.5px;
+    font-weight: 700;
+}
+.process-monitoring .measurement-textbox label{
+    font-size: 15.3px;
+}
+.ro-monitoring .measurement-textbox .unit {
+    font-size: 10px;
+}
+.title-area{
+    position: relative;
+}
+.title-area .title{
+    position: absolute;
+    left: 25px;
+    top: 13px;
+}
+.ro-monitoring .title-area .title {
+    width: 78px;
+    height: 35px;
+    background: url(image/title_process-monitoring.svg) no-repeat 0 0;
+}
+.process-monitoring .title-area .title {
+    width: 179px;
+    height: 35px;
+    background: url(image/title_ro-monitoring.svg) no-repeat 0 0;
+}
+.date-area{
+    position: relative;
+}
+.date-area .date-box{
+    position: absolute;
+    left: 50%;
+    top: 14px;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #efefef;
+    text-align: center;
+    line-height: 20px;
+}
+.process-monitoring .date-area .date-box{
+    background: #fff;
+}
+
+/* 
+    **공정 모니터링 CSS** 
+*/
+.process-monitoring *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* 수조 스타일 */
+.process-monitoring .water-tank {
+    position: absolute;
+    display: inline-block;
+}
+
+.process-monitoring .water-tank-box{
+    position: absolute;
+}
+.process-monitoring .water-tank-img{
+    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.process-monitoring .water-tank-text{
+    display: block;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #525252;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.process-monitoring .water-tank-img.water-height{
+    width: 114px;
+    height: 117px;
+}
+
+/* 물 높이 레벨에 따른 클래스 */
+.process-monitoring .water-tank-img.water-height.red-25{    
+    background-image: url('image/red_25.svg');
+}
+.process-monitoring .water-tank-img.water-height.red-50{
+    background-image: url('image/red_50.svg');
+}
+.process-monitoring .water-tank-img.water-height.red-75{
+    background-image: url('image/red_75.svg');
+}
+.process-monitoring .water-tank-img.water-height.red-100{
+    background-image: url('image/red_100.svg');
+}
+.process-monitoring .water-tank-img.water-height.black-25{
+    background-image: url('image/black_25.svg');
+}
+.process-monitoring .water-tank-img.water-height.black-50{
+    background-image: url('image/black_50.svg');
+}
+.process-monitoring .water-tank-img.water-height.black-75{
+    background-image: url('image/black_75.svg');
+}
+.process-monitoring .water-tank-img.water-height.black-100{
+    background-image: url('image/black_100.svg');
+}
+.process-monitoring .water-tank-img.water-height.blue-25{
+    background-image: url('image/blue_25.svg');
+}
+.process-monitoring .water-tank-img.water-height.blue-50{
+    background-image: url('image/blue_50.svg');
+}
+.process-monitoring .water-tank-img.water-height.blue-75{
+    background-image: url('image/blue_75.svg');
+}
+.process-monitoring .water-tank-img.water-height.blue-100{
+    background-image: url('image/blue_100.svg');
+}
+
+
+/* 텍스트 박스 위치 */
+.process-monitoring .water-tank .water-tank-box{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.process-monitoring .water-tank.tank-1{  /* 유량조 */
+    left: 149px;
+    top: 110px;
+}
+.process-monitoring .water-tank.tank-2{ /* 전탈질조 */
+    left: 533px;
+    top: 110px;
+}
+.process-monitoring .water-tank.tank-3 { /* 폭기조 */
+    left: 900px;
+    top: 110px;
+}
+.process-monitoring .water-tank.tank-4 { /* 구)폭기조 */
+    left: 900px;
+    top: 467px;
+}
+.process-monitoring .water-tank.tank-5 { /* 농축조 */
+    left: 159px;
+    top: 467px;
+}
+.process-monitoring .water-tank.tank-6{ /* 구)막분리조 */
+    left: 533px;
+    top: 467px;
+}
+.process-monitoring .water-tank.tank-7 { /* 막분리조 */
+    left: 159px;
+    top: 826px;
+}
+.process-monitoring .water-tank.tank-8 { /* 막처리수조 */
+    left: 533px;
+    top: 826px;
+}
+.process-monitoring .water-tank.tank-9 { /* 스컴저장조 */
+    left: 1668PX;
+    top: 110px;
+}
+.process-monitoring .water-tank.tank-10 { /* 반송조 */
+    left: 1668PX;
+    top: 378px;
+}
+.process-monitoring .water-tank.tank-11{ /* RO 처리수조 */
+    left: 1771px;
+    top: 643px;
+}
+.process-monitoring .water-tank.tank-12{ /* 액비저장소 */
+    left: 1771px;
+    top: 902px;
+}
+
+
+/* 수위 포지션 */
+.process-monitoring .water-tank .measurement-textbox.waterlevel{
+    width: 102px;
+    left: 6px;
+    top: 155px;
+}
+
+/* 유량계 포지션 */
+.process-monitoring .flowmeter-area{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+}
+.process-monitoring .flowmeter-area .measurement-textbox{
+    position: static;
+    width: 153px;
+}
+.process-monitoring .water-tank.tank-1 .flowmeter-area{
+    left: 155px;
+    top: -30px;
+}
+.process-monitoring .water-tank.tank-4 .flowmeter-area{
+    gap: 15px;
+    left: 70px;
+    top: -170px;
+}
+.process-monitoring .water-tank.tank-6 .flowmeter-area{
+    left: -200px;
+    top: -30px;
+}
+.process-monitoring .water-tank.tank-7 .flowmeter-area.flow-1{
+    gap: 15px;
+    left: -127px;
+    top: -172px;
+}
+.process-monitoring .water-tank.tank-7 .flowmeter-area.flow-2{
+    left: 150px;
+    top: -13px;
+}
+.process-monitoring .water-tank.tank-8 .flowmeter-area{
+    left: 155px;
+    top: -13px;
+}
+.process-monitoring .water-tank.tank-11 .flowmeter-area{
+    left: -265px;
+    top: -23px;
+}
+.process-monitoring .water-tank.tank-12 .flowmeter-area{
+    left: -265px;
+    top: -21px;
+}
+
+
+
+/* 
+    **RO 모니터링 CSS** 
+*/
+/* 공통영역 */
+.ro-monitoring *{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0; 
+}
+.ro-monitoring ul,ol{
+    list-style: none;
+}
+
+.ro-monitoring .measurement-textbox{
+    width: 92px;
+    top: -65px;
+}
+.ro-monitoring .measurement-textbox label {
+    font-size: 10px;
+}
+.ro-monitoring  .measurement-textbox .input-container {
+    font-size: 13.5px;
+    padding: 2px 7.5px;
+    gap: 5px;
+}
+.ro-monitoring .measurement-textbox .input-container input {
+    height: 27px;
+    font-size: 22px;
+    width: 100%;
+    letter-spacing: -0.5px;
+}
+.ro-monitoring  .measurement-textbox .unit.percent{
+    font-size: 10.5px;
+    font-weight: 700;
+}
+/* // 공통영역 */
+
+/* 노란색 라벨 */
+.ro-monitoring .label-box{
+    position: relative;
+}
+.ro-monitoring .label{
+    position: absolute;
+    display: inline-block;
+    padding: 3px 20px;
+    background:#ffed8a;
+    font-weight: 600;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.ro-monitoring .label-1{
+    min-width: 96px;
+    left: 112px;
+    top: 67px;
+}
+.ro-monitoring .label-2{
+    left: 468px;
+    top: 67px;
+    padding: 3px 5px;
+    min-width: 108px;
+}
+.ro-monitoring .label-3{
+    min-width: 106px;
+    left: 1730px;
+    top: 280px;
+}
+.ro-monitoring .label-4{
+    min-width: 94px;
+    left: 1390px;
+    top: 479px;
+}
+.ro-monitoring .label-5{
+    min-width: 81px;
+    left: 1363px;
+    top: 582px;
+}
+.ro-monitoring .label-6{
+    min-width: 117px;
+    left: 1575px;
+    top: 652px;
+}
+
+/* 수조영역 */
+.ro-monitoring .water-tank-area{
+    position: relative;
+}
+.ro-monitoring .water-tank-box{
+    display: inline-block;
+    position: absolute;
+}
+.ro-monitoring .water-tank-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 141px;
+}
+.ro-monitoring .water-tank-inner .tank-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3px;
+    font-weight: 600;
+    font-size: 9px;
+    text-align: center;
+    line-height: 1.2;
+    color:#525252;
+}
+
+.ro-monitoring .frame-area{
+    position: absolute;
+    right: 19px;
+    bottom: 43px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4.5px;
+}
+.ro-monitoring .frame-area li{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 4px;
+}
+.ro-monitoring .on-off-switch{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(image/button_off.svg) no-repeat center / 100%;
+}
+.ro-monitoring .on-off-switch.switch-on{
+    background-image: url(image/button_on.svg);
+}
+.ro-monitoring .frame-area .switch-label {
+    width: 22px;
+    height: 12px;
+    line-height: 11px;
+    color: #FFFF35;
+    font-size: 8.25px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 2.25px;
+    box-shadow: 0 0 0 0.75px #8C1C1C inset;
+    background: linear-gradient(rgba(215,0,0,1) 0%, rgba(255,9,9,1) 100%);
+}
+
+/* 펌프영역 positon */
+.ro-monitoring .tank-1{
+    left: 236.5px;
+    top: 142.5px;
+}
+.ro-monitoring .tank-2{
+    left: 539px;
+    top: 143px;
+}
+.ro-monitoring .tank-3{
+    left: 265px;
+    top: 488px;
+}
+.ro-monitoring .tank-4{
+    left: 185px;
+    top: 887px;
+}
+.ro-monitoring .tank-5{
+    left: 1182px;
+    top: 764px;
+}
+.ro-monitoring .tank-6{
+    left: 1390px;
+    top: 764px;
+}
+.ro-monitoring .tank-7{
+    left: 803px;
+    top: 100px;
+}
+.ro-monitoring .tank-2 .frame-area,
+.ro-monitoring .tank-3 .frame-area{
+    right: 17px;
+    bottom: 32px;
+}
+.ro-monitoring .tank-4 .frame-area{
+    right: 17px;
+    bottom: 44px;
+}
+.ro-monitoring .tank-5 .frame-area,
+.ro-monitoring .tank-6 .frame-area{
+    right: initial;
+    left: 19px;
+    bottom: 18px;
+}
+.ro-monitoring .tank-1 .measurement-textbox{
+    left: -95px;
+    top: 20px;
+}
+.ro-monitoring .tank-2 .measurement-textbox{
+    left: -90px;
+    top: 22px;
+}
+.ro-monitoring .tank-3 .measurement-textbox{
+    left: 72px;
+    top: -93px;
+}
+.ro-monitoring .tank-6 .water-tank-inner .tank-name{
+    align-items: flex-start;
+    position: absolute;
+    bottom: -20px;
+    right: -5px;
+}
+.ro-monitoring .tank-5 .water-tank-inner .tank-name{
+    align-items: flex-start;
+    position: absolute;
+    bottom: -20px;
+    right: -5px;
+}
+
+/* 펌프영역 */
+.ro-monitoring .pump-area{
+    position: relative;
+}
+.ro-monitoring .pump-box{
+    display: inline-block;
+    position: absolute;
+}
+.ro-monitoring .pump-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 68px;
+}
+.ro-monitoring .pump-images{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ro-monitoring .pump-name{
+    margin-top: 3px;
+    font-weight: 600;
+    font-size: 9px;
+    text-align: center;
+    line-height: 1.2;
+    color:#525252;
+}
+.ro-monitoring .pump-name span{
+    white-space: nowrap;
+}
+.ro-monitoring .pump-1 .pump-images{
+    flex-direction: row;
+    gap: 10px;
+}
+.ro-monitoring .pump-5 .pump-inner{
+    width: 92px;
+}
+.ro-monitoring .pump-7 .pump-inner{
+    flex-direction: row;
+    gap: 10px;
+}
+.ro-monitoring .pump-1{
+    left: 241px;
+    top: 177px;
+}
+.ro-monitoring .pump-2{
+    left: 675px;
+    top: 130px;
+}
+.ro-monitoring .pump-3{
+    left: 1133px;
+    top: 116px;
+}
+.ro-monitoring .pump-4{
+    left: 407px;
+    top: 478px;
+}
+.ro-monitoring .pump-5{
+    left: 778px;
+    top: 458px;
+}
+.ro-monitoring .pump-6{
+    left: 491px;
+    top: 953px;
+}
+.ro-monitoring .pump-7{
+    left: 833px;
+    top: 74px;
+}
+.ro-monitoring .pump-8{
+    left: 753px;
+    top: 760px;
+}
+.ro-monitoring .pump-9{
+    left: 852px;
+    top: 760px;
+}
+.ro-monitoring .pump-5 .pump-inner .pump-images{
+    position: relative;
+    left: -11px;
+}
+.ro-monitoring .pump-2 .pump-name{
+    margin-top: 7px;
+}
+.ro-monitoring .pump-3 .pump-name span,
+.ro-monitoring .pump-5 .pump-name span{
+    white-space: initial;
+}
+.ro-monitoring .pump-7 .pump-name{
+    margin-top: -9px;
+}
+.ro-monitoring .pump-8 .pump-name{
+    position: absolute;
+    left: -43px;
+    top: 8px;
+}
+.ro-monitoring .pump-9 .pump-name{
+    position: absolute;
+    right: -55px;
+    top: 8px;
+}
+
+
+.ro-monitoring .measurement-area{
+    position: relative;
+}
+.ro-monitoring .measurement-container{
+    display: inline-block;
+    position: absolute;
+}
+.ro-monitoring .measurement-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ro-monitoring .measurement-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    font-size: 9px;
+    text-align: center;
+    line-height: 1.2;
+}
+.ro-monitoring .measure-1{
+    left: 322px;
+    top: 102px;
+}
+.ro-monitoring .measure-2{
+    left: 962px;
+    top: 178.5px;
+}
+.ro-monitoring .measure-3{
+    left: 1005px;
+    top: 178.5px;
+}
+.ro-monitoring .measure-4{
+    left: 1242px;
+    top: 127px;
+}
+.ro-monitoring .measure-5{
+    left: 1447px;
+    top: 127px;
+}
+.ro-monitoring .measure-6{
+    left: 1564px;
+    top: 127px;
+}
+.ro-monitoring .measure-7{
+    left: 1676px;
+    top: 270px;
+}
+.ro-monitoring .measure-8{
+    left: 600px;
+    top: 524px;
+}
+.ro-monitoring .measure-9{
+    left: 686px;
+    top: 524px;
+}
+.ro-monitoring .measure-10{
+    left: 881px;
+    top: 469px;
+}
+.ro-monitoring .measure-11{
+    left: 1113px;
+    top: 468px;
+}
+.ro-monitoring .measure-12{
+    left: 1178px;
+    top: 468px;
+}
+.ro-monitoring .measure-1 .measurement-textbox{
+    left: -25px;
+    width: 106px;
+}
+.ro-monitoring .measure-2 .measurement-textbox{
+    left: -74px;
+    width: 102px;
+}
+.ro-monitoring .measure-3 .measurement-textbox{
+    left: -5px;
+    width: 94px;
+}
+.ro-monitoring .measure-4 .measurement-textbox{
+    left: -60px;
+    width: 94px;
+}
+.ro-monitoring .measure-5 .measurement-textbox{
+    left: -40px;
+    width: 102px;
+}
+.ro-monitoring .measure-6 .measurement-textbox{
+    left: -40px;
+    width: 106px;
+}
+.ro-monitoring .measure-7 .measurement-textbox{
+    left: -40px;
+    width: 106px;
+}
+.ro-monitoring .measure-8 .measurement-textbox{
+    left: -60px;
+    width: 106px;
+}
+.ro-monitoring .measure-9 .measurement-textbox{
+    left: -30px;
+    width: 100px;
+}
+.ro-monitoring .measure-10 .measurement-textbox{
+    left: -40px;
+    width: 94px;
+}
+.ro-monitoring .measure-11 .measurement-textbox{
+    left: -65px;
+    width: 102px;
+}
+.ro-monitoring .measure-12 .measurement-textbox{
+    left: -18px;
+    width: 106px;
+}
+
+
+
+
+
+/* 펌프영역 */
+.ro-monitoring .lightbulb-area{
+    position: relative;
+}
+.ro-monitoring .lightbulb-box{
+    display: inline-block;
+    position: absolute;
+}
+.ro-monitoring .lightbulb-inner{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 68px;
+}
+/* .ro-monitoring .light-4 .lightbulb-inner{
+    flex-direction: row;
+    gap: 10px;
+} */
+.ro-monitoring .lightbulb-images{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ro-monitoring .lightbulb-name{
+    position: absolute;
+    /* margin-top: 3px; */
+    font-weight: 600;
+    font-size: 9px;
+    text-align: center;
+    line-height: 1.2;
+    color:#525252;
+}
+.ro-monitoring .light-1{
+    left: 322px;
+    top: 922px;
+}
+.ro-monitoring .light-2{
+    left: 1419px;
+    top: 885px;
+}
+.ro-monitoring .light-3{
+    left: 1213px;
+    top: 885px;
+}
+.ro-monitoring .light-4{
+    left: 1453px;
+    top: 722px;
+}
+.ro-monitoring .light-5{
+    left: 1242px;
+    top: 722px;
+}
+.ro-monitoring .light-6{
+    left: 1430px;
+    top: 722px;
+}
+.ro-monitoring .light-7{
+    left: 1221px;
+    top: 722px;
+}
+.ro-monitoring .light-8{
+    left: 1088.5px;
+    top: 255.5px;
+}
+.ro-monitoring .light-9{
+    left: 1065px;
+    top: 192px;
+}
+.ro-monitoring .light-10{
+    left: 1250px;
+    top: 175px;
+}
+.ro-monitoring .light-11{
+    left: 1225px;
+    top: 206.5px;
+}
+.ro-monitoring .light-12{
+    left: 1250px;
+    top: 255.5px;
+}
+.ro-monitoring .light-13{
+    left: 1324px;
+    top: 255.5px;
+}
+.ro-monitoring .light-14{
+    left: 1297px;
+    top: 255.5px;
+}
+.ro-monitoring .light-15{
+    left: 1471.5px;
+    top: 218.5px;
+}
+.ro-monitoring .light-16{
+    left: 281px;
+    top: 415px;
+}
+.ro-monitoring .light-17{
+    left: 1301px;
+    top: 415px;
+}
+.ro-monitoring .light-18{
+    left: 194px;
+    top: 812px;
+}
+.ro-monitoring .light-19{
+    left: 1467px;
+    top: 654px;
+}
+.ro-monitoring .light-20{
+    left: 1502px;
+    top: 680px;
+}
+
+/* ////////////////////////////////////////////////// */
+.ro-monitoring .lightbulb-box.light-1 .lightbulb-name{ top: -15px; }
+.ro-monitoring .lightbulb-box.light-2 .lightbulb-name{ left: 5px;}
+.ro-monitoring .lightbulb-box.light-3 .lightbulb-name{ left: 5px; }
+.ro-monitoring .lightbulb-box.light-4 .lightbulb-name{ right: 5px;}
+.ro-monitoring .lightbulb-box.light-5 .lightbulb-name{ right: 5px;}
+.ro-monitoring .lightbulb-box.light-6 .lightbulb-name{ left: 5px; }
+.ro-monitoring .lightbulb-box.light-7 .lightbulb-name{ left: 5px; }
+.ro-monitoring .lightbulb-box.light-8 .lightbulb-name{ left: 5px; }
+.ro-monitoring .lightbulb-box.light-9 .lightbulb-name{ top: -15px; }
+.ro-monitoring .lightbulb-box.light-10 .lightbulb-name{ right: 3px;}
+.ro-monitoring .lightbulb-box.light-11 .lightbulb-name{ left: 3px; }
+.ro-monitoring .lightbulb-box.light-12 .lightbulb-name{ left: 3px; }
+.ro-monitoring .lightbulb-box.light-13 .lightbulb-name{ right: 3px;}
+.ro-monitoring .lightbulb-box.light-14 .lightbulb-name{ left: 3px; }
+.ro-monitoring .lightbulb-box.light-15 .lightbulb-name{ left: 2px; }
+.ro-monitoring .lightbulb-box.light-16 .lightbulb-name{ left: 0px; }
+.ro-monitoring .lightbulb-box.light-17 .lightbulb-name{ left: 0px; }
+.ro-monitoring .lightbulb-box.light-18 .lightbulb-name{ left: 0px; }
+.ro-monitoring .lightbulb-box.light-19 .lightbulb-name{ top: -15px; }
+.ro-monitoring .lightbulb-box.light-20 .lightbulb-name{ right: 0px;}
+
+
+/* 물높이 조절 클래스 */
+.ro-monitoring .water-tank-area .tank-image img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.ro-monitoring .first-tank.water-level-1 .tank-image img{
+    background-image: url(image/water_tank1_25.svg);
+}.ro-monitoring .first-tank.water-level-2 .tank-image img{
+    background-image: url(image/water_tank1_50.svg);
+}.ro-monitoring .first-tank.water-level-3 .tank-image img{
+    background-image: url(image/water_tank1_75.svg);
+}.ro-monitoring .first-tank.water-level-4 .tank-image img{
+    background-image: url(image/water_tank1_100.svg);
+}
+
+.ro-monitoring .second-tank.water-level-1 .tank-image img{
+    background-image: url(image/water_tank2_25.svg);
+}.ro-monitoring .second-tank.water-level-2 .tank-image img{
+    background-image: url(image/water_tank2_50.svg);
+}.ro-monitoring .second-tank.water-level-3 .tank-image img{
+    background-image: url(image/water_tank2_75.svg);
+}.ro-monitoring .second-tank.water-level-4 .tank-image img{
+    background-image: url(image/water_tank2_100.svg);
+}
+
+.ro-monitoring .third-tank.water-level-1 .tank-image img{
+    background-image: url(image/water_tank4_25.svg);
+}.ro-monitoring .third-tank.water-level-2 .tank-image img{
+    background-image: url(image/water_tank4_50.svg);
+}.ro-monitoring .third-tank.water-level-3 .tank-image img{
+    background-image: url(image/water_tank4_75.svg);
+}.ro-monitoring .third-tank.water-level-4 .tank-image img{
+    background-image: url(image/water_tank4_100.svg);
+}
+.ro-monitoring .fourth-tank.water-level-1 .tank-image img{
+    background-image: url(image/water_tank3_25.svg);
+}.ro-monitoring .fourth-tank.water-level-2 .tank-image img{
+    background-image: url(image/water_tank3_50.svg);
+}.ro-monitoring .fourth-tank.water-level-3 .tank-image img{
+    background-image: url(image/water_tank3_75.svg);
+}.ro-monitoring .fourth-tank.water-level-4 .tank-image img{
+    background-image: url(image/water_tank3_100.svg);
+}
+
+/* 스위치 on off class */
+.ro-monitoring .pump-1 .on-off-switch{
+    width: 18px;
+    height: 38px;
+    background: url(image/pump_s_off.svg);
+}
+.ro-monitoring .pump-2 .on-off-switch,
+.ro-monitoring .pump-3 .on-off-switch,
+.ro-monitoring .pump-4 .on-off-switch,
+.ro-monitoring .pump-5 .on-off-switch,
+.ro-monitoring .pump-6 .on-off-switch{
+    width: 21px;
+    height: 44px;
+    background: url(image/pump_l_off.svg);
+}
+.ro-monitoring .pump-7 .on-off-switch{
+    width: 20px;
+    height: 36px;
+    background: url(image/pump_m_off.svg);
+}
+.ro-monitoring .pump-1.switch-active .switch-on{
+    background: url(image/pump_s_on.svg);
+}
+.ro-monitoring .pump-2.switch-active .switch-on,
+.ro-monitoring .pump-3.switch-active .switch-on,
+.ro-monitoring .pump-4.switch-active .switch-on,
+.ro-monitoring .pump-5.switch-active .switch-on,
+.ro-monitoring .pump-6.switch-active .switch-on{
+    background: url(image/pump_l_on.svg);
+}
+.ro-monitoring .pump-7.switch-active .switch-on{
+    background: url(image/pump_m_on.svg);
+}
+.ro-monitoring .pump-8 .not-switch,
+.ro-monitoring .pump-9 .not-switch{
+    width: 57px;
+    height: 97px;
+    background: url(image/default_pump.svg);
+}
+
+
+.ro-monitoring .measurement-container .on-off-switch{
+    width: 16px;
+    height: 28px;
+    background: url(image/swith_1_off.svg);
+}
+.ro-monitoring .measurement-container.switch-active .switch-on{
+    background: url(image/swith_1_on.svg);
+}
+
+.ro-monitoring .lightbulb-box .on-off-switch{
+    width: 15px;
+    height: 18px;
+    background: url(image/swith_2_off.svg);
+}
+.ro-monitoring .lightbulb-box.switch-active .switch-on{
+    background: url(image/swith_2_on.svg);
+}
+
+@media (max-width: 1919px) {
+    .wrapper {
+      overflow-x: auto;
+    }
+  }
+@media (max-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+    .wrapper {
+        overflow: auto;
+    }
+}
